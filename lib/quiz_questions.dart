@@ -280,10 +280,15 @@ class Quiz1State extends State<Quiz1> {
   }
 }
 
-class Summary extends StatelessWidget {
+class Summary extends StatefulWidget {
   final int score;
   Summary({Key key, @required this.score}) : super(key: key);
 
+  @override
+  _SummaryState createState() => _SummaryState();
+}
+
+class _SummaryState extends State<Summary> {
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
@@ -296,7 +301,7 @@ class Summary extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new Text(
-                    "Final Score: $score",
+                    "Final Score: ${widget.score}",
                     style: new TextStyle(fontSize: 35.0),
                   ),
                   new Padding(padding: EdgeInsets.all(30.0)),
@@ -305,7 +310,13 @@ class Summary extends StatelessWidget {
                     onPressed: () {
                       questionNumber = 0;
                       finalScore = 0;
-                      Navigator.pop(context);
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => new Quiz1()));
+                      });
+                      // Navigator.pop(context);
                     },
                     child: new Text(
                       "Reset Quiz",
