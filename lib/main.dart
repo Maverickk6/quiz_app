@@ -13,19 +13,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new AnimalQuiz(),
+      home: new BrainQuiz(),
     );
   }
 }
 
-class AnimalQuiz extends StatefulWidget{
+class BrainQuiz extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-   return new AnimalQuizState();
+   return new BrainQuizState();
   }
 }
 
-class AnimalQuizState extends State<AnimalQuiz>{
+class BrainQuizState extends State<BrainQuiz>{
   @override
   Widget build(BuildContext context) {
    return new Scaffold(

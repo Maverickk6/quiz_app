@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 var finalScore = 0;
 var questionNumber = 0;
-var quiz = new AnimalQuiz();
+var quiz = new BrainQuiz();
 
 Color baseColor = Colors.blueGrey;
 Color colorCorrect = Colors.green;
+
 Color oldColor1 = Colors.blueGrey;
 Color oldColor2 = Colors.blueGrey;
 Color oldColor3 = Colors.blueGrey;
 Color oldColor4 = Colors.blueGrey;
+
 Color newColor = Colors.blueGrey;
 
 Color wrongColor1 = Colors.red;
@@ -17,7 +19,7 @@ Color wrongColor2 = Colors.red;
 Color wrongColor3 = Colors.red;
 Color wrongColor4 = Colors.red;
 
-class AnimalQuiz {
+class BrainQuiz {
   var images = ["alligator", "cat", "dog", "owl"];
 
   var questions = [
